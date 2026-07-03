@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}塔外智能 TowerOS - 企业智能体应用平台{% endblock %}
+{% block content %}
+<section class="hero official-hero">
+  <div class="shell hero-grid">
+    <div class="hero-copy light-copy">
+      <p class="eyebrow light">TowerOS Enterprise Agent Platform</p>
+      <h1>塔外智能 TowerOS 企业智能体应用平台</h1>
+      <p class="hero-subtitle">面向企业真实岗位、业务流程与现场管理场景，构建可执行、可复核、可沉淀的数字工作单元。</p>
+      <div class="hero-actions"><a class="primary-btn light-btn" href="/agent">获取智能体方案</a><a class="secondary-btn light-outline" href="/scenarios">查看解决方案</a></div>
+      <div class="hero-proof"><span>岗位任务</span><span>企业知识</span><span>流程协同</span><span>现场安全</span></div>
+    </div>
+    <div class="command-center tech-console">
+      <div class="tech-grid-bg"></div>
+      <div class="tech-orbit one"></div>
+      <div class="tech-orbit two"></div>
+      <div class="tech-console-head">
+        <div><span>TowerOS Command Center</span><strong>企业智能体运行中枢</strong></div>
+        <em>ONLINE</em>
+      </div>
+      <div class="tech-core-layout">
+        <section class="tech-core">
+          <div class="core-ring"><div class="core-node"><span>T</span><strong>TowerOS</strong><em>Agent Hub</em></div></div>
+          <div class="node-card n1"><span>岗位任务</span><strong>1,284</strong></div>
+          <div class="node-card n2"><span>知识调用</span><strong>8,642</strong></div>
+          <div class="node-card n3"><span>流程复核</span><strong>326</strong></div>
+          <div class="node-card n4"><span>经验沉淀</span><strong>4,096</strong></div>
+        </section>
+        <aside class="tech-side-panel">
+          <div class="panel-title"><span>Workflow</span><strong>智能体执行链路</strong></div>
+          <ol>
+            <li><i></i><div><strong>任务识别</strong><span>岗位需求进入中枢</span></div></li>
+            <li><i></i><div><strong>知识调用</strong><span>匹配资料与历史案例</span></div></li>
+            <li><i></i><div><strong>执行复核</strong><span>保留人工确认节点</span></div></li>
+            <li><i></i><div><strong>沉淀优化</strong><span>形成企业知识资产</span></div></li>
+          </ol>
+        </aside>
+      </div>
+      <div class="tech-metrics">
+        <div><span>Task Traceability</span><strong>96.8%</strong></div>
+        <div><span>Event Response</span><strong>24h</strong></div>
+        <div><span>Scenario Coverage</span><strong>8类</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="value-bar">
+  <div class="shell value-grid"><div><strong>可执行</strong><span>将业务任务拆解为明确步骤</span></div><div><strong>可复核</strong><span>保留人工确认与过程记录</span></div><div><strong>可沉淀</strong><span>把结果转化为组织知识资产</span></div><div><strong>可扩展</strong><span>从单岗位试点走向流程协同</span></div></div>
+</section>
+<section class="section shell architecture-section">
+  <div class="section-title"><p class="eyebrow">Platform Architecture</p><h2>以企业业务为中心的智能体能力架构</h2><p>从岗位任务切入，连接知识资产、流程节点和复核机制，形成可持续运行的企业智能体应用体系。</p></div>
+  <div class="architecture-map"><div class="arch-layer core"><span>01</span><h3>智能体编排中枢</h3><p>统一管理任务、知识、流程和结果。</p></div><div class="arch-layer"><span>02</span><h3>岗位任务层</h3><p>销售、采购、财务、人事、生产、运营、客服、质量。</p></div><div class="arch-layer"><span>03</span><h3>知识与复核层</h3><p>制度资料、产品文档、历史案例、复盘报告。</p></div><div class="arch-layer"><span>04</span><h3>业务流程层</h3><p>事件触发、任务分派、阶段汇报、异常提醒、结果归档。</p></div></div>
+</section>
+<section class="section solution-band">
+  <div class="shell">
+    <div class="section-title split-title"><div><p class="eyebrow">Solutions</p><h2>面向真实业务场景的智能体解决方案</h2></div><a class="text-link" href="/scenarios">全部方案</a></div>
+    <div class="solution-grid">{% for scenario in scenarios %}<article><span>0{{ loop.index }}</span><h3>{{ scenario.name }}</h3><p>{{ scenario.summary }}</p><strong>{{ scenario.value }}</strong></article>{% endfor %}</div>
+  </div>
+</section>
+<section class="section shell product-section">
+  <div class="section-title split-title"><div><p class="eyebrow">Product Capabilities</p><h2>产品能力体系</h2></div><p>支撑企业从“了解智能体”走向“落地智能体”。</p></div>
+  <div class="capability-table">{% for product in products %}<article><div><span class="table-index">0{{ loop.index }}</span><h3>{{ product.name }}</h3><p>{{ product.summary }}</p></div><ul>{% for feature in product.features %}<li>{{ feature }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+</section>
+<section class="section consult-band">
+  <div class="shell consult-inner"><div><p class="eyebrow light">Consultation Entrance</p><h2>从官网访问到方案生成</h2><p>访客描述行业、岗位或业务痛点，即可获得推荐智能体、落地路径和试点建议。</p></div><a class="primary-btn light-btn" href="/agent">进入智能咨询</a></div>
+</section>
+{% endblock %}
+{% block scripts %}{% endblock %}

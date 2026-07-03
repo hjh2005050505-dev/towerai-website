@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}解决方案 - 塔外智能 TowerOS{% endblock %}
+{% block content %}
+<section class="page-hero scenario-hero">
+  <div class="shell page-hero-grid">
+    <div><p class="eyebrow light">Solutions</p><h1>企业智能体解决方案</h1><p>从岗位任务到工业现场，从运营复盘到文档处理，让智能体进入可衡量、可复核、可扩展的业务场景。</p></div>
+    <div class="page-hero-panel"><span>Business Scenarios</span><strong>岗位 · 现场 · 运营 · 文档</strong></div>
+  </div>
+</section>
+<section class="section shell solution-detail-grid">
+  {% for scenario in scenarios %}
+  <article class="solution-detail-card">
+    <div class="solution-head"><span>0{{ loop.index }}</span><h2>{{ scenario.name }}</h2></div>
+    <p>{{ scenario.summary }}</p>
+    <div class="process-line">{% for item in scenario.flow %}<span>{{ item }}</span>{% endfor %}</div>
+    <div class="capability-list">{% for capability in scenario.capabilities %}<em>{{ capability }}</em>{% endfor %}</div>
+    <strong>{{ scenario.value }}</strong>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}智能咨询 - 塔外智能 TowerOS{% endblock %}
+{% block content %}
+<section class="agent-page shell corporate-agent">
+  <div class="agent-intro"><p class="eyebrow">Intelligent Consultation</p><h1>企业智能体方案咨询</h1><p>面向访客的智能咨询入口。输入行业、岗位或业务痛点，即可获得推荐方案、落地路径和试点建议。</p><div class="quick-prompts"><button data-prompt="我想了解塔外智能产品">了解平台能力</button><button data-prompt="我们公司想做工业安全巡检智能体">工业安全方案</button><button data-prompt="我们公司想做运营复盘">运营复盘方案</button><button data-prompt="销售和客服岗位能不能做智能体">岗位任务方案</button></div><div class="agent-note"><strong>咨询逻辑</strong><span>需求识别 -> 场景匹配 -> 方案摘要 -> 线索沉淀</span></div></div>
+  <section class="chat-shell"><div class="chat-header"><strong>方案顾问</strong><span>TowerOS Knowledge Base</span></div><div class="chat-window" id="chatWindow"><div class="message bot">你好，我是塔外智能方案顾问。你可以告诉我所在行业、关注岗位或业务痛点，我会推荐适合的企业智能体方案。</div></div><form class="chat-form" id="chatForm"><input id="chatInput" name="message" autocomplete="off" placeholder="例如：我们公司想做工业现场安全巡检"><button type="submit">发送</button></form></section>
+  <aside class="lead-panel"><h2>需求登记</h2><p>用于模拟企业官网的线索收集与商务跟进。</p><form id="leadForm"><input name="name" placeholder="姓名"><input name="company" placeholder="公司/学校"><input name="contact" placeholder="联系方式" required><select name="interest"><option value="工业安全智能体">工业安全智能体</option><option value="运营复盘智能体">运营复盘智能体</option><option value="岗位任务智能体">岗位任务智能体</option><option value="企业知识智能体">企业知识智能体</option></select><textarea name="message" placeholder="补充需求"></textarea><button type="submit">提交需求</button><span id="leadStatus" class="form-status"></span></form></aside>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ request.url_for('static', path='js/agent.js') }}"></script>{% endblock %}

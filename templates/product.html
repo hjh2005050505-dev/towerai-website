@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}平台能力 - 塔外智能 TowerOS{% endblock %}
+{% block content %}
+<section class="page-hero product-hero">
+  <div class="shell page-hero-grid">
+    <div><p class="eyebrow light">Product Capabilities</p><h1>TowerOS 平台能力</h1><p>围绕岗位任务、企业知识和业务流程构建企业智能体应用底座，支撑从单点试点到多场景协同的持续落地。</p></div>
+    <div class="page-hero-panel"><span>Agent Application Stack</span><strong>任务执行 · 知识调用 · 流程协同 · 结果复核</strong></div>
+  </div>
+</section>
+<section class="section shell stack-section">
+  {% for product in products %}
+  <article class="stack-card">
+    <div class="stack-number">0{{ loop.index }}</div>
+    <div class="stack-main"><h2>{{ product.name }}</h2><p>{{ product.summary }}</p><strong>{{ product.value }}</strong></div>
+    <div class="stack-tags">{% for feature in product.features %}<span>{{ feature }}</span>{% endfor %}</div>
+  </article>
+  {% endfor %}
+</section>
+<section class="section shell deployment-section">
+  <div class="section-title"><p class="eyebrow">Implementation Path</p><h2>企业智能体落地路径</h2></div>
+  <div class="deploy-grid"><div><span>01</span><h3>业务诊断</h3><p>识别岗位任务、数据来源、复核节点和业务目标。</p></div><div><span>02</span><h3>场景试点</h3><p>优先选择高频、标准化、可衡量的任务进行验证。</p></div><div><span>03</span><h3>流程接入</h3><p>连接知识库、工单、CRM、企业微信等业务系统。</p></div><div><span>04</span><h3>持续沉淀</h3><p>将执行结果、复盘报告和经验模板沉淀为组织资产。</p></div></div>
+</section>
+{% endblock %}
